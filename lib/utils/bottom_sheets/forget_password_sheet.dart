@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:legal_links_app/resources/resources.dart';
 import 'package:legal_links_app/services/auth_services.dart';
+import 'package:legal_links_app/services/sp_helper.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 import '../../resources/validator.dart';
@@ -117,6 +118,8 @@ class _ForgotPasswordSheetState extends State<ForgotPasswordSheet> {
                         passwordController.text.trim(),
                         vm.userModel,
                       );
+                      SharedPreferencesHelper.deleteUserData();
+
                       Get.back();
                     } else {
                       Auth().sendResetPassEmail(emailController.text.trim());

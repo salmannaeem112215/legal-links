@@ -25,10 +25,8 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
 
-  TextEditingController emailController =
-      TextEditingController(/* text: 'luffy@gmail.com' */);
-  TextEditingController passwordController =
-      TextEditingController(/* text: '12345@' */);
+  TextEditingController emailController = TextEditingController(/* text: 'luffy@gmail.com' */);
+  TextEditingController passwordController = TextEditingController(/* text: '12345@' */);
 
   FocusNode emailFocus = FocusNode();
   FocusNode passwordFocus = FocusNode();
@@ -96,9 +94,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: Padding(
                         padding: EdgeInsets.only(right: 8.sp),
                         child: Icon(
-                          ispObscure
-                              ? Icons.visibility_off_rounded
-                              : Icons.remove_red_eye_rounded,
+                          ispObscure ? Icons.visibility_off_rounded : Icons.remove_red_eye_rounded,
                           color: Colors.grey,
                           size: 16.sp,
                         ),

@@ -10,6 +10,7 @@ import 'package:get/get.dart';
 import 'package:legal_links_app/constants/enums.dart';
 import 'package:legal_links_app/services/auth_services.dart';
 import 'package:legal_links_app/services/firebase_collections.dart';
+import 'package:legal_links_app/services/sp_helper.dart';
 import 'package:legal_links_app/src/auth/model/lawyer_model.dart';
 import 'package:legal_links_app/src/auth/model/user_model.dart';
 import 'package:legal_links_app/src/auth/view/login_screen.dart';
@@ -18,7 +19,6 @@ import 'package:legal_links_app/src/base/vm/base_vm.dart';
 import 'package:legal_links_app/src/lawyer_base/view/lawyer_base_view.dart';
 import 'package:legal_links_app/utils/zbot_toast.dart';
 import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthVM extends ChangeNotifier {
   PageController singupPageController = PageController();
@@ -34,8 +34,7 @@ class AuthVM extends ChangeNotifier {
     LawyerModelSignup(id: "8", specialist: "Tax law"),
     LawyerModelSignup(id: "9", specialist: "Bankruptcy Lawyer"),
     LawyerModelSignup(id: "10", specialist: "Entertainment Lawyer"),
-    LawyerModelSignup(
-        id: "11", specialist: "Business Lawyer (Corporate Lawyer)"),
+    LawyerModelSignup(id: "11", specialist: "Business Lawyer (Corporate Lawyer)"),
     LawyerModelSignup(id: "12", specialist: "Constitutional Lawyer"),
     LawyerModelSignup(id: "13", specialist: "Criminal Defense Lawyer"),
     LawyerModelSignup(id: "14", specialist: "Employment and Labor Lawyer"),
@@ -57,22 +56,38 @@ class AuthVM extends ChangeNotifier {
 
   List<File> attachmentsList = [];
 
-  Future<bool> checkFirstTimeLogin() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    bool isFirstTimeLogin = prefs.getBool('firstTimeLogin') ?? true;
+  // Future<bool> checkFirstTimeLogin() async {
+  // SharedPreferences prefs = await SharedPreferences.getInstance();
+  // bool isFirstTimeLogin = prefs.getBool('firstTimeLogin') ?? true;
 
-    // If it's the first-time login, update the flag in preferences
-    if (isFirstTimeLogin) {
-      prefs.setBool('firstTimeLogin', false);
-    }
+  // If it's the first-time login, update the flag in preferences
+  // if (isFirstTimeLogin) {
+  //   prefs.setBool('firstTimeLogin', false);
+  // }
 
-    return isFirstTimeLogin;
-  }
+  // return isFirstTimeLogin;
+  // }
 
   Future<void> signIn(String email, String pass) async {
+    // Map? map = await HiveStorage.getHive();
+    // Retrieve data
+    // Map<String, String> userData = await SharedPreferencesHelper.getUserData();
+    // print("Email: ${userData["email"]}, Password: ${userData["pass"]}");
+
+    // if (map != null) {
     try {
       ZBotToast.loadingShow();
       User? user = await _auth.signInWithEmailPassword(email, pass);
+      // Map m = {
+      //   "email": email,
+      //   "pass": pass,
+      // };
+      // Save data
+      // String email = "user@example.com";
+      // String pass = "password123";
+      SharedPreferencesHelper.saveUserData(email, pass);
+
+      // await HiveStorage.setHive(m);
       if (user != null) {
         // if (user.emailVerified) {
         userModel = (await _auth.getUserData(user.uid)) ?? UserModel();
@@ -96,17 +111,14 @@ class AuthVM extends ChangeNotifier {
             ZBotToast.showToastSuccess(message: 'Logged in Successfully');
           } else {
             ZBotToast.showToastSuccess(
-                message:
-                    'Your Role is not defined, Please Contact With Support, Thank You!');
+                message: 'Your Role is not defined, Please Contact With Support, Thank You!');
           }
         } else if (userModel.status == UserStatus.BLOCKED) {
-          ZBotToast.showToastError(
-              message: "You have been blocked by the admin");
+          ZBotToast.showToastError(message: "You have been blocked by the admin");
         } else if (userModel.status == UserStatus.PENDING) {
           ZBotToast.showToastError(message: "Wait for approved by the admin");
         } else {
-          ZBotToast.showToastError(
-              message: "You have been deleted by the admin");
+          ZBotToast.showToastError(message: "You have been deleted by the admin");
         }
       } else {
         // ZBotToast.showToastError(message: "Verify Your Email");
@@ -117,17 +129,18 @@ class AuthVM extends ChangeNotifier {
       notifyListeners();
     } catch (e) {
       String error = e.toString().split(']').toList().last;
+      // await HiveStorage.deleteHive();
       ZBotToast.showToastError(message: error);
       ZBotToast.loadingClose();
     }
+    // }
   }
 
   Future<bool> signUp(UserModel? ud, {required String pass}) async {
     bool result = false;
     try {
       ZBotToast.loadingShow();
-      User? user =
-          await _auth.createUserWithEmailPassword(ud?.email ?? "", pass);
+      User? user = await _auth.createUserWithEmailPassword(ud?.email ?? "", pass);
       if (user != null) {
         debugPrint("user is not null");
         ud?.id = user.uid;
@@ -231,10 +244,8 @@ class AuthVM extends ChangeNotifier {
     try {
       ZBotToast.loadingShow();
       DateTime now = DateTime.now();
-      String fileName =
-          '${now.microsecondsSinceEpoch}.${image.path.split('.').last}';
-      Reference firebaseStorageRef =
-          FirebaseStorage.instance.ref().child('userImages/$fileName');
+      String fileName = '${now.microsecondsSinceEpoch}.${image.path.split('.').last}';
+      Reference firebaseStorageRef = FirebaseStorage.instance.ref().child('userImages/$fileName');
       UploadTask uploadTask = firebaseStorageRef.putFile(image);
       await uploadTask.then((res) async {
         imageURL = await res.ref.getDownloadURL();
@@ -277,6 +288,7 @@ class AuthVM extends ChangeNotifier {
       // Assuming deleteAccount does not throw an exception upon success
       if (proceed) {
         Get.back();
+        // await HiveStorage.deleteHive();
 
         Get.offAllNamed(LoginScreen.route);
         userModel = UserModel();

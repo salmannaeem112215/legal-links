@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:get/get.dart';
 import 'package:legal_links_app/resources/resources.dart';
+import 'package:legal_links_app/services/sp_helper.dart';
+import 'package:legal_links_app/src/auth/vm/auth_vm.dart';
 import 'package:legal_links_app/src/base/view/pages/settings/vm/settings_vm.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
@@ -17,14 +19,11 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen>
-    with SingleTickerProviderStateMixin {
+class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderStateMixin {
   Future<void> startTimer() async {
-    await Future.delayed(
-        const Duration(seconds: 2)); // Delay for text animation
+    await Future.delayed(const Duration(seconds: 2)); // Delay for text animation
     await controller.forward(); // Start the text animation
-    await Future.delayed(
-        const Duration(seconds: 3)); // Delay before starting image animation
+    await Future.delayed(const Duration(seconds: 3)); // Delay before starting image animation
     Get.offAllNamed(LoginScreen.route);
   }
 
@@ -34,6 +33,19 @@ class _SplashScreenState extends State<SplashScreen>
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
       var vm = Provider.of<SettingsVM>(context, listen: false);
+      var avm = Provider.of<AuthVM>(context, listen: false);
+      // Map? m = await HiveStorage.getHive();
+      // if (m != null) {
+      //   String e = m["email"];
+      //   String p = m["email"];
+      // Retrieve data
+      Map<String, String> userData = await SharedPreferencesHelper.getUserData();
+      debugPrint("Email: ${userData["email"]}}");
+      if (userData["email"] != null && userData["pass"] != null) {
+        await avm.signIn(userData["email"]!, userData["pass"]!);
+      }
+      // }
+
       await vm.getData();
       vm.update();
     });
@@ -60,8 +72,7 @@ class _SplashScreenState extends State<SplashScreen>
                 child: SlideAnimation(
                   verticalOffset: -MediaQuery.of(context).size.height,
                   child: FadeInAnimation(
-                    child: Image.asset(R.images.logo,
-                        scale: 4), // Replace with your logo asset
+                    child: Image.asset(R.images.logo, scale: 4), // Replace with your logo asset
                   ),
                 ),
               ),

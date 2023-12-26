@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import 'package:legal_links_app/src/base/view/pages/dashboard.dart/vm/home_vm.dart';
 import 'package:legal_links_app/src/base/view/pages/settings/vm/settings_vm.dart';
 import 'package:legal_links_app/src/base/vm/base_vm.dart';
@@ -40,8 +41,6 @@ Future<void> main() async {
         ChangeNotifierProvider(create: (context) => AuthVM()),
         ChangeNotifierProvider(create: (context) => HomeVM()),
         ChangeNotifierProvider(create: (context) => BaseVM()),
-        // ChangeNotifierProvider(create: (context) => BaseVM()),
-        // ChangeNotifierProvider(create: (context) => SignupLawyer()),
         ChangeNotifierProvider(create: (context) => AppointmentVM()),
         ChangeNotifierProvider(create: (context) => SettingsVM()),
         ChangeNotifierProvider(create: (context) => LawyerVM()),
@@ -68,9 +67,7 @@ class MyApp extends StatelessWidget {
           title: 'Legal Links',
           debugShowCheckedModeBanner: false,
           initialRoute: SplashScreen.route,
-          // initialRoute: ScheduleAppointmentView.route,
           getPages: AppPages.pages,
-          // home: TestWidget(),
         ),
       );
     });
