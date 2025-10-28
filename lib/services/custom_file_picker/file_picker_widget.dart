@@ -140,7 +140,9 @@ class _FilePickerWidgetState extends State<FilePickerWidget> {
                         (fileType == FileTypeEnum.jpg.name ||
                                 fileType == FileTypeEnum.jpeg.name ||
                                 fileType == FileTypeEnum.png.name)
-                            ? Get.dialog(ImageSlider(index: index, sliderList: list))
+                            ? SizedBox()
+                            
+                            // Get.dialog(ImageSlider(index: index, sliderList: list))
                             : (fileType == FileTypeEnum.pdf.name)
                                 ? Get.to(() => PDFViewWidget(
                                       path: list[index].path,
