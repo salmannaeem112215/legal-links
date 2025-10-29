@@ -94,7 +94,7 @@ class AuthVM extends ChangeNotifier {
 
         debugPrint("userModel ${userModel.fullName}");
         debugPrint("userModel ${userModel.status}");
-        if (userModel.status == UserStatus.ACTIVE) {
+        if (userModel.status == UserStatus.ACTIVE ||userModel.status == UserStatus.PENDING) {
           if (userModel.role == UserRole.CLIENT) {
             {
               Get.offAllNamed(BaseView.route);
