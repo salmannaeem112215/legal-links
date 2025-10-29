@@ -3,12 +3,21 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:path_provider/path_provider.dart';
 
 class ImagePickerServices {
   // get profile image function
   static File? profileImage;
   static File? coverImage;
   static List<File>? photoIDList;
+
+  // ✅ Utility: Save file permanently
+  static Future<File> _saveImagePermanently(File imageFile) async {
+    final directory = await getApplicationDocumentsDirectory();
+    final fileName = "${DateTime.now().millisecondsSinceEpoch}.jpg";
+    final savedImage = await imageFile.copy('${directory.path}/$fileName');
+    return savedImage;
+  }
 
   static Future<bool> checkFileSize(path, {bool isVideo = false}) async {
     var fileSizeLimit = isVideo ? 1024 * 10 : 1024 * 100;
@@ -46,6 +55,7 @@ class ImagePickerServices {
             imageQuality: 85,
           );
     if (pickedFile != null) {
+      // profileImage= File(pickedFile.path);
       File? croppedFile = await cropImage(
           filePath: pickedFile.path, isOptionsEnabled: isSizeOptional!);
       profileImage = File(croppedFile?.path ?? "");
@@ -81,7 +91,7 @@ class ImagePickerServices {
       //       ],
     );
     File tempFile = File(croppedFile!.path);
-
+    return await _saveImagePermanently(tempFile);
     return tempFile;
   }
 }

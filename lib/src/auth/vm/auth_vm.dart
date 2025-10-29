@@ -1,7 +1,7 @@
 // ignore_for_file: unnecessary_null_comparison
 import 'dart:core';
 import 'dart:io';
-
+import 'package:supabase_flutter/supabase_flutter.dart' hide User;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -243,7 +243,6 @@ Future<String?> uploadImageUser(File image) async {
 
   try {
     ZBotToast.loadingShow();
-
     if (!image.existsSync()) {
       debugPrint("File does not exist: ${image.path}");
       ZBotToast.loadingClose();
@@ -273,11 +272,63 @@ Future<String?> uploadImageUser(File image) async {
   return imageURL;
 }
 
+
+
+Future<String?> uploadImageUserInSupabase(File image) async {
+final supabase = Supabase.instance.client;
+
+  String? imageURL;
+
+  try {
+    ZBotToast.loadingShow();
+
+    if (!image.existsSync()) {
+      debugPrint("File does not exist: ${image.path}");
+      ZBotToast.loadingClose();
+      return null;
+    }
+
+    // Generate unique file name
+    DateTime now = DateTime.now();
+    String fileName = '${now.microsecondsSinceEpoch}_${image.path.split('/').last}';
+
+    // Upload to Supabase Storage
+    await supabase.storage.from('user-images').upload(fileName, image);
+
+    // Get public URL
+    imageURL = supabase.storage.from('user-images').getPublicUrl(fileName);
+
+    debugPrint("✅ Uploaded to Supabase: $imageURL");
+
+    ZBotToast.loadingClose();
+    notifyListeners();
+    return imageURL;
+  } catch (e) {
+    debugPrint("❌ Supabase upload error: $e");
+    ZBotToast.loadingClose();
+    return null;
+  }
+}
+
+
   Future<List<String>?> uploadMultiFiles({required List<File> files}) async {
     ZBotToast.loadingShow();
     List<String> docsURL = [];
     for (int i = 0; i <= files.length; i++) {
       String url = await uploadImageUser(files[i]) ?? '';
+      docsURL.add(url);
+      if (i == files.length - 1) {
+        return docsURL;
+      }
+    }
+    ZBotToast.loadingClose();
+    return null;
+  }
+    Future<List<String>?> uploadMultiFilesInSupabase({required List<File> files}) async {
+    ZBotToast.loadingShow();
+    List<String> docsURL = [];
+    for (int i = 0; i <= files.length; i++) {
+      String url = await uploadImageUserInSupabase(files[i]) ?? '';
       docsURL.add(url);
       if (i == files.length - 1) {
         return docsURL;

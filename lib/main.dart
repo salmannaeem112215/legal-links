@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:legal_links_app/constants/mapkey.dart';
 
 import 'package:legal_links_app/src/base/view/pages/dashboard.dart/vm/home_vm.dart';
 import 'package:legal_links_app/src/base/view/pages/settings/vm/settings_vm.dart';
@@ -10,13 +11,18 @@ import 'package:legal_links_app/src/base/vm/base_vm.dart';
 import 'package:legal_links_app/src/landing_page/view/splash_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 import 'firebase_options.dart';
 import 'routes/app_routes.dart';
 import 'src/auth/vm/auth_vm.dart';
 import 'src/base/view/pages/appointment/vm/appointment_vm.dart';
 import 'src/lawyer_base/view/pages/dashboard/vm/lawyer_vm.dart';
 
+const supabaseUrl = SupabaseKey.projectUrl;
+const supabaseKey = SupabaseKey.apikey;
 Future<void> main() async {
+  await Supabase.initialize(url: supabaseUrl, anonKey: supabaseKey,);
+  
   WidgetsFlutterBinding.ensureInitialized();
 
   if (kIsWeb) {

@@ -214,8 +214,8 @@ class _SignupScreenThreeOfLawyerState extends State<SignupScreenThreeOfLawyer> {
     if (_formKey.currentState!.validate()) {
       ZBotToast.loadingShow();
 
-      String? url = await vm.uploadImageUser(vm.tempLawyerProfileImage!);
-      List<String>? docsUrl = await vm.uploadMultiFiles(files: vm.attachmentsList);
+      String? url = await vm.uploadImageUserInSupabase(vm.tempLawyerProfileImage!);
+      List<String>? docsUrl = await vm.uploadMultiFilesInSupabase(files: vm.attachmentsList);
       debugPrint("docsUrl ${docsUrl?.length}");
       debugPrint("docsUrl $docsUrl");
 

@@ -96,7 +96,7 @@ class _PaymentConfirmationDialogState extends State<PaymentConfirmationDialog> {
                       ZBotToast.loadingShow();
                       BaseVM vm = Provider.of<BaseVM>(context, listen: false);
                       AuthVM aVm = Provider.of<AuthVM>(context, listen: false);
-                      String? imageUrl = await vm.uploadImageUser(paymentImage!,
+                      String? imageUrl = await vm.uploadImageUserInSupabase(paymentImage!,
                           '${vm.tempBookingModel?.id}', '${vm.tempBookingModel?.customerId}');
                       if (imageUrl?.isNotEmpty ?? false) {
                         vm.tempBookingModel = BookingModel(

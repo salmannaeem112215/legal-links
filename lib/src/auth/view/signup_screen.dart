@@ -350,9 +350,8 @@ class _SignupScreenState extends State<SignupScreen> {
         ZBotToast.showToastError(message: "Please Pick Image");
         debugPrint(" Please Pick Image ");
       } else {
-        String? url = await context.read<AuthVM>().uploadImageUser(profileImage!);
+        String? url = await context.read<AuthVM>().uploadImageUserInSupabase(profileImage!);
         debugPrint("  Image URL $url ");
-        url = '';
         if (url != null) {
           Timestamp now = Timestamp.now();
           UserModel createClient = UserModel(
@@ -400,6 +399,7 @@ class _SignupScreenState extends State<SignupScreen> {
           ImagePickerOption(
             uploadImage: (value) async {
               if (value != null) {
+                print("HI INSIDE PRIFILE IMAGE UPLOAD ${value}");
                 profileImage = value;
                 vm.update();
                 setState(() {});

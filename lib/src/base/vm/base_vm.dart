@@ -10,6 +10,7 @@ import 'package:legal_links_app/src/base/view/base_view.dart';
 import 'package:legal_links_app/src/base/view/pages/appointment/model/booking_model.dart';
 import 'package:legal_links_app/src/lawyer_base/view/pages/dashboard/model/lawyer_schedule_model.dart';
 import 'package:legal_links_app/utils/zbot_toast.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 class BaseVM extends ChangeNotifier {
   int currentIndex = 0;
@@ -58,7 +59,7 @@ class BaseVM extends ChangeNotifier {
         notifyListeners();
       } else {
         debugPrint("Lawyer doesnt have schedule yet.");
-        ZBotToast.showToastError(message: "Lawyer doesnt have schedule yet.");
+        // ZBotToast.showToastError(message: "Lawyer doesnt have schedule yet.");
       }
     } catch (e) {
       debugPrint("Error getting document by ID: $e");
@@ -90,6 +91,7 @@ class BaseVM extends ChangeNotifier {
   }
 
   Future<String?> uploadImageUser(File image, String id, String customerId) async {
+
     String? imageURL;
 
     try {
@@ -117,6 +119,45 @@ class BaseVM extends ChangeNotifier {
 
     return imageURL;
   }
+  Future<String?> uploadImageUserInSupabase(File image, String id, String customerId) async {
+  String? imageURL;
+    final supabase = Supabase.instance.client;
+
+  try {
+    ZBotToast.loadingShow();
+    debugPrint("Uploading to Supabase...");
+
+    final String fileName =
+        'bookings/$id-$customerId-${DateTime.now().microsecondsSinceEpoch}.${image.path.split('.').last}';
+
+    // Upload to Supabase Storage
+    final uploadResponse = await supabase.storage
+        .from('user-images') // ⚠️ Replace with your bucket name in Supabase
+        .upload(fileName, image);
+
+    if (uploadResponse.isEmpty) {
+      throw Exception('Upload failed');
+    }
+
+    // Get public URL
+    final publicUrl = supabase.storage
+        .from('user-images') // same bucket name
+        .getPublicUrl(fileName);
+
+    imageURL = publicUrl;
+    debugPrint("✅ Uploaded: $imageURL");
+
+    notifyListeners();
+    ZBotToast.loadingClose();
+
+    return imageURL;
+  } catch (e) {
+    debugPrint("❌ Supabase upload error: $e");
+    ZBotToast.loadingClose();
+  }
+
+  return imageURL;
+}
 
   void update() {
     notifyListeners();

@@ -57,7 +57,8 @@ class _LawyerDetailsScrrenState extends State<LawyerDetailsScrren> {
 
       await vm.getLawyerScheduleById(lawyerModel?.id ?? "");
 
-      dateList = vm.lyrSchByID?.availableDates?.map((e) => e.toDate()).toList() ?? [];
+      dateList = List.generate(30,(index)=>DateTime.now().add(Duration(days: 1)));
+
 
       ZBotToast.loadingClose();
 
@@ -282,10 +283,10 @@ class _LawyerDetailsScrrenState extends State<LawyerDetailsScrren> {
                   h2,
                   Wrap(
                     children: List.generate(
-                      baseVm.lyrSchByID?.availableDates?.length ?? 0,
+                    dateList.length ?? 0,
                       (index) {
-                        Timestamp? timestampDate = baseVm.lyrSchByID!.availableDates![index];
-
+                        Timestamp? timestampDate = Timestamp.fromDate(dateList[index]);
+                          print("TIMeSTAMP DATE ${timestampDate.toDate()}");
                         // Compare the current date with the date in timestampDate
                         DateTime currentDate = DateTime.now().add(const Duration(days: -1));
                         DateTime dateFromTimestamp = timestampDate.toDate();

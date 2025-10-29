@@ -65,6 +65,7 @@ class ImagePickerOptionState extends State<ImagePickerOption> {
                                 context: context)
                             .then((value) async {
                           if (ImagePickerServices.profileImage != null) {
+                            debugPrint("ImagePICKERSERVICES ${ImagePickerServices.profileImage}");
                             widget
                                 .uploadImage!(ImagePickerServices.profileImage);
                           }
