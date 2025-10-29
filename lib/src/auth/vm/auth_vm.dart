@@ -238,32 +238,40 @@ class AuthVM extends ChangeNotifier {
   //   return imageURL;
   // }
 
-  Future<String?> uploadImageUser(File image) async {
-    String? imageURL;
+Future<String?> uploadImageUser(File image) async {
+  String? imageURL;
 
-    try {
-      ZBotToast.loadingShow();
-      DateTime now = DateTime.now();
-      String fileName = '${now.microsecondsSinceEpoch}.${image.path.split('.').last}';
-      Reference firebaseStorageRef = FirebaseStorage.instance.ref().child('userImages/$fileName');
-      UploadTask uploadTask = firebaseStorageRef.putFile(image);
-      await uploadTask.then((res) async {
-        imageURL = await res.ref.getDownloadURL();
-        debugPrint("========== $imageURL");
+  try {
+    ZBotToast.loadingShow();
 
-        notifyListeners();
-      });
+    if (!image.existsSync()) {
+      debugPrint("File does not exist: ${image.path}");
       ZBotToast.loadingClose();
-      getFileExtensionFromUrl(imageURL!);
-      return imageURL;
-    } catch (e) {
-      debugPrint(e.toString());
-      ZBotToast.loadingClose();
+      return null;
     }
-    ZBotToast.loadingClose();
 
+    DateTime now = DateTime.now();
+    String fileName = '${now.microsecondsSinceEpoch}.${image.path.split('.').last}';
+    Reference firebaseStorageRef = FirebaseStorage.instance.ref().child('userImages/$fileName');
+
+    UploadTask uploadTask = firebaseStorageRef.putFile(image);
+    await uploadTask.then((res) async {
+      imageURL = await res.ref.getDownloadURL();
+      debugPrint("========== $imageURL");
+
+      notifyListeners();
+    });
+
+    ZBotToast.loadingClose();
+    getFileExtensionFromUrl(imageURL!);
     return imageURL;
+  } catch (e) {
+    debugPrint(e.toString());
+    ZBotToast.loadingClose();
   }
+
+  return imageURL;
+}
 
   Future<List<String>?> uploadMultiFiles({required List<File> files}) async {
     ZBotToast.loadingShow();

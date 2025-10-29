@@ -57,17 +57,28 @@ class ImagePickerServices {
       {required String filePath, required bool isOptionsEnabled}) async {
     CroppedFile? croppedFile = await ImageCropper().cropImage(
       sourcePath: filePath,
-      aspectRatioPresets: isOptionsEnabled
-          ? [
-              CropAspectRatioPreset.square,
-              CropAspectRatioPreset.ratio3x2,
-              CropAspectRatioPreset.original,
-              CropAspectRatioPreset.ratio4x3,
-              CropAspectRatioPreset.ratio16x9
-            ]
-          : [
-              CropAspectRatioPreset.square,
-            ],
+      aspectRatio: CropAspectRatio(ratioX: 1.0, ratioY: 1.0), // square
+  uiSettings: [
+    AndroidUiSettings(
+      toolbarTitle: 'Crop Image',
+      toolbarColor: Colors.deepOrange,
+      toolbarWidgetColor: Colors.white,
+      lockAspectRatio: false,
+    ),
+    IOSUiSettings(
+      title: 'Crop Image',
+    ),]
+      // aspectRatioPresets: isOptionsEnabled
+      //     ? [
+      //         CropAspectRatioPreset.square,
+      //         CropAspectRatioPreset.ratio3x2,
+      //         CropAspectRatioPreset.original,
+      //         CropAspectRatioPreset.ratio4x3,
+      //         CropAspectRatioPreset.ratio16x9
+      //       ]
+      //     : [
+      //         CropAspectRatioPreset.square,
+      //       ],
     );
     File tempFile = File(croppedFile!.path);
 

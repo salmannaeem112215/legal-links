@@ -352,6 +352,7 @@ class _SignupScreenState extends State<SignupScreen> {
       } else {
         String? url = await context.read<AuthVM>().uploadImageUser(profileImage!);
         debugPrint("  Image URL $url ");
+        url = '';
         if (url != null) {
           Timestamp now = Timestamp.now();
           UserModel createClient = UserModel(
