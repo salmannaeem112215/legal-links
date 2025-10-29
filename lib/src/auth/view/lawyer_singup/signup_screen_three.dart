@@ -109,23 +109,23 @@ class _SignupScreenThreeOfLawyerState extends State<SignupScreenThreeOfLawyer> {
                     inputType: TextInputType.streetAddress,
                     hintText: 'Address',
                     fieldTitle: "Your address",
-                    suffixIcon: GestureDetector(
-                      onTap: () {
-                        Get.to(
-                          () => GoogleMapScreen(
-                            selectedLocation: latLng,
-                            address: (value) {
-                              pickLocationData = value;
-                              latLng = LatLng(value.lat ?? 0, value.lng ?? 0);
-                              addressController.text = pickLocationData?.streetAddress ?? '';
-                            },
-                          ),
-                        );
-                        setState(() {});
-                        debugPrint("pickLocationData $pickLocationData");
-                      },
-                      child: const Icon(Icons.location_pin),
-                    ),
+                    // suffixIcon: GestureDetector(
+                    //   onTap: () {
+                    //     Get.to(
+                    //       () => GoogleMapScreen(
+                    //         selectedLocation: latLng,
+                    //         address: (value) {
+                    //           pickLocationData = value;
+                    //           latLng = LatLng(value.lat ?? 0, value.lng ?? 0);
+                    //           addressController.text = pickLocationData?.streetAddress ?? '';
+                    //         },
+                    //       ),
+                    //     );
+                    //     setState(() {});
+                    //     debugPrint("pickLocationData $pickLocationData");
+                    //   },
+                      // child: const Icon(Icons.location_pin),
+                    // ),
                   ),
                   h1,
                   CustomTextFormField(
