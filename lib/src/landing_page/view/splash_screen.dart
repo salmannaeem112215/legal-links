@@ -87,7 +87,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                       "LEGAL LINKS",
                       style: R.textStyles.poppinsBold().copyWith(
                             color: R.colors.primary,
-                            fontSize: 16.sp,
+                            fontSize: 16,
                           ),
                     ),
                   ),

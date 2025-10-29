@@ -11,7 +11,7 @@ class AppTextStyles {
     double? letterSpacing,
   }) {
     return GoogleFonts.poppins(
-      fontSize: fontSize ?? 11.sp,
+      fontSize: fontSize ?? 11,
       color: color ?? R.colors.black,
       fontWeight: fontWeight ?? FontWeight.normal,
       letterSpacing: letterSpacing ?? 0,
@@ -25,7 +25,7 @@ class AppTextStyles {
     double? letterSpacing,
   }) {
     return GoogleFonts.poppins(
-      fontSize: fontSize ?? 12.sp,
+      fontSize: fontSize ?? 12,
       color: color ?? R.colors.black,
       fontWeight: fontWeight ?? FontWeight.w600,
       letterSpacing: letterSpacing ?? 0,
@@ -39,7 +39,7 @@ class AppTextStyles {
     double? letterSpacing,
   }) {
     return GoogleFonts.poppins(
-      fontSize: fontSize ?? 12.sp,
+      fontSize: fontSize ?? 12,
       color: color ?? R.colors.black,
       fontWeight: fontWeight ?? FontWeight.bold,
       letterSpacing: letterSpacing ?? 0,
@@ -53,7 +53,7 @@ class AppTextStyles {
     double? letterSpacing,
   }) {
     return GoogleFonts.poppins(
-      fontSize: fontSize ?? 12.sp,
+      fontSize: fontSize ?? 12,
       color: color ?? R.colors.black,
       fontWeight: fontWeight ?? FontWeight.w500,
       letterSpacing: letterSpacing ?? 0,

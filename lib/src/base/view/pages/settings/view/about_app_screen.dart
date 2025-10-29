@@ -25,7 +25,7 @@ class _AboutAppScreenState extends State<AboutAppScreen> {
                 h5,
                 Text(
                   'About Legal links',
-                  style: R.textStyles.poppinsBold(fontSize: 16.sp),
+                  style: R.textStyles.poppinsBold(fontSize: 16),
                 ),
                 h5,
                 Text(

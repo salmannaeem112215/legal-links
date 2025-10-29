@@ -91,14 +91,14 @@ class _AppointmentWidgetState extends State<AppointmentWidget> {
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
                                 style: R.textStyles
-                                    .poppinsSemiBold(fontSize: 11.sp, color: R.colors.black),
+                                    .poppinsSemiBold(fontSize: 11, color: R.colors.black),
                               ),
                               Text(
                                 bookingStatusEnum(widget.model.status!),
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
                                 style: R.textStyles.poppinsMedium(
-                                  fontSize: 11.sp,
+                                  fontSize: 11,
                                   color: getColorForBookingStatus(widget.model.status),
                                 ),
                               ),
@@ -114,14 +114,14 @@ class _AppointmentWidgetState extends State<AppointmentWidget> {
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
                                 style: R.textStyles
-                                    .poppinsRegular(fontSize: 10.sp, color: R.colors.primary),
+                                    .poppinsRegular(fontSize: 10, color: R.colors.primary),
                               ),
                               Text(
                                 widget.model.feePerMeeting?.toStringAsFixed(2) ?? "",
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
                                 style: R.textStyles
-                                    .poppinsRegular(fontSize: 10.sp, color: Colors.blue[900]),
+                                    .poppinsRegular(fontSize: 10, color: Colors.blue[900]),
                               ),
                             ],
                           ),
@@ -130,7 +130,7 @@ class _AppointmentWidgetState extends State<AppointmentWidget> {
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                             style: R.textStyles
-                                .poppinsRegular(fontSize: 10.sp, color: R.colors.primary),
+                                .poppinsRegular(fontSize: 10, color: R.colors.primary),
                           ),
                           h2,
                           if (widget.model.selectedDate != null)
@@ -147,12 +147,12 @@ class _AppointmentWidgetState extends State<AppointmentWidget> {
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                   style: R.textStyles
-                                      .poppinsRegular(fontSize: 10.sp, color: R.colors.primary),
+                                      .poppinsRegular(fontSize: 10, color: R.colors.primary),
                                 ),
                                 Text(
                                   "  |  ",
                                   style: R.textStyles
-                                      .poppinsRegular(fontSize: 10.sp, color: R.colors.grey),
+                                      .poppinsRegular(fontSize: 10, color: R.colors.grey),
                                 ),
                                 Text(
                                   DateFormat("hh:mm a")
@@ -160,7 +160,7 @@ class _AppointmentWidgetState extends State<AppointmentWidget> {
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                   style: R.textStyles
-                                      .poppinsRegular(fontSize: 10.sp, color: R.colors.primary),
+                                      .poppinsRegular(fontSize: 10, color: R.colors.primary),
                                 )
                               ],
                             )

@@ -105,7 +105,7 @@ class _UpdateClientScreenState extends State<UpdateClientScreen> {
                     child: Text(
                       "Phone Number",
                       style: R.textStyles.poppinsMedium(
-                        fontSize: 11.sp,
+                        fontSize: 11,
                         color: Colors.black,
                       ),
                     ),
@@ -147,7 +147,7 @@ class _UpdateClientScreenState extends State<UpdateClientScreen> {
         filled: true,
         focusColor: R.colors.primary,
         hintStyle:
-            R.textStyles.poppinsRegular(fontSize: 11.sp, color: Colors.grey),
+            R.textStyles.poppinsRegular(fontSize: 11, color: Colors.grey),
         errorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
             borderSide: BorderSide(

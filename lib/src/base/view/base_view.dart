@@ -204,7 +204,7 @@ class _BaseViewState extends State<BaseView> {
                 w1,
                 Text(
                   "Hello, ${context.read<AuthVM>().userModel.fullName?.capitalizeFirst}!",
-                  style: R.textStyles.poppinsMedium(fontSize: 15.sp, color: R.colors.white),
+                  style: R.textStyles.poppinsMedium(fontSize: 15, color: R.colors.white),
                 ),
                 w1,
               ],

@@ -39,7 +39,7 @@ class _ImageViewState extends State<ImageView> {
               ),
               title: Text(
                 "view",
-                style: R.textStyles.poppinsRegular(color: R.colors.primary, fontSize: 14.sp),
+                style: R.textStyles.poppinsRegular(color: R.colors.primary, fontSize: 14),
               )),
           body: Column(
             children: [

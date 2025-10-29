@@ -75,12 +75,12 @@ class _ConfirmationDialogState extends State<ConfirmationDialog> {
                 Text(
                   "Create Account as:",
                   style: R.textStyles.poppinsMedium(
-                    fontSize: 13.sp,
+                    fontSize: 13,
                   ),
                 ),
                 h1,
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: 10.sp, vertical: 5.sp),
+                  margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                   width: double.infinity,
                   child: AppButton(
                     verticlePadding: 12,

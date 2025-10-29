@@ -67,7 +67,7 @@ class _CourtWidgetState extends State<CourtWidget> {
                 "${widget.model.name}",
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
-                style: R.textStyles.poppinsMedium(fontSize: 11.sp),
+                style: R.textStyles.poppinsMedium(fontSize: 11),
               ),
             ),
             h1,

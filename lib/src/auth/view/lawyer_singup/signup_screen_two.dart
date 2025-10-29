@@ -208,7 +208,7 @@ class _SignupScreenTwoOfLawyerState extends State<SignupScreenTwoOfLawyer> {
                 value: item,
                 child: Text(
                   item.specialist ?? "",
-                  style: R.textStyles.poppinsRegular(color: R.colors.black, fontSize: 8.sp),
+                  style: R.textStyles.poppinsRegular(color: R.colors.black, fontSize: 8),
                 ),
               ))
           .toList(),
@@ -235,7 +235,7 @@ class _SignupScreenTwoOfLawyerState extends State<SignupScreenTwoOfLawyer> {
                 value: item,
                 child: Text(
                   item.specialist ?? "",
-                  style: R.textStyles.poppinsRegular(color: R.colors.black, fontSize: 8.sp),
+                  style: R.textStyles.poppinsRegular(color: R.colors.black, fontSize: 8),
                 ),
               ))
           .toList(),
@@ -265,7 +265,7 @@ class _SignupScreenTwoOfLawyerState extends State<SignupScreenTwoOfLawyer> {
             onPressed: onTap,
             child: Text(
               'ADD MORE',
-              style: R.textStyles.poppinsSemiBold(color: R.colors.primary, fontSize: 10.sp),
+              style: R.textStyles.poppinsSemiBold(color: R.colors.primary, fontSize: 10),
             )),
       ],
     );

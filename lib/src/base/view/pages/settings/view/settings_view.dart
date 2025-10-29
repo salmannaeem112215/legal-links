@@ -73,7 +73,7 @@ class _SettingsViewState extends State<SettingsView> {
                 h2,
                 Text(
                   authVM.userModel.fullName ?? '',
-                  style: R.textStyles.poppinsBold(fontSize: 15.sp),
+                  style: R.textStyles.poppinsBold(fontSize: 15),
                 ),
                 Text(authVM.userModel.email ?? '', style: R.textStyles.poppinsRegular()),
                 h4,

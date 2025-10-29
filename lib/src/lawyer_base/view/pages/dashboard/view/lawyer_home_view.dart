@@ -33,7 +33,7 @@ class _LawyerHomeViewState extends State<LawyerHomeView> {
                   h2,
                   Text(
                     'Hello, ${vm.userModel.fullName}!',
-                    style: R.textStyles.poppinsBold(fontSize: 15.sp),
+                    style: R.textStyles.poppinsBold(fontSize: 15),
                   ),
                   Text(
                     'Elevate Your practice with Legal Links',

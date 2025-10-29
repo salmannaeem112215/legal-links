@@ -60,7 +60,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
             child: Text(
               widget.fieldTitle ?? "",
               style: R.textStyles.poppinsMedium(
-                fontSize: 11.sp,
+                fontSize: 11,
                 color: Colors.black,
               ),
             ),
@@ -85,7 +85,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           autovalidateMode: widget.autovalidateMode,
           inputFormatters: widget.inputFormatters ?? [],
           style: R.textStyles.poppinsRegular(
-            fontSize: 11.sp,
+            fontSize: 11,
             color: Colors.black,
           ),
           decoration: R.decoration.fieldDecoration(

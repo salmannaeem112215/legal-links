@@ -114,7 +114,7 @@ class _FilePickerWidgetState extends State<FilePickerWidget> {
                     "Upload",
                     style: R.textStyles.poppinsRegular(
                       color: R.colors.black,
-                      fontSize: 8.sp,
+                      fontSize: 8,
                       fontWeight: FontWeight.w500,
                     ),
                   )
@@ -192,7 +192,7 @@ class _FilePickerWidgetState extends State<FilePickerWidget> {
                       "${list[index].path.split('/').last.length >= 5 ? list[index].path.split('/').last.substring(0, 5) : list[index].path.split('/').last}.${list[index].path.split('.').last}",
                       style: R.textStyles.poppinsRegular(
                         color: R.colors.black,
-                        fontSize: 8.sp,
+                        fontSize: 8,
                         fontWeight: FontWeight.w500,
                       ),
                     )
@@ -371,7 +371,7 @@ class _FilePickerWidgetState extends State<FilePickerWidget> {
             title,
             style: R.textStyles.poppinsRegular().copyWith(
                   color: R.colors.black,
-                  fontSize: 9.sp,
+                  fontSize: 9,
                   fontWeight: FontWeight.w500,
                   height: 2,
                 ),

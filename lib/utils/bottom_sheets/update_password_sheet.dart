@@ -59,7 +59,7 @@ class _ChangePasswordSheetState extends State<UpdatePasswordSheet> {
                 Text(
                   'Change Password',
                   style: R.textStyles
-                      .poppinsBold(color: R.colors.black, fontSize: 15.sp),
+                      .poppinsBold(color: R.colors.black, fontSize: 15),
                 ),
                 h2,
                 Text(

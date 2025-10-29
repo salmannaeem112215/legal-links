@@ -59,7 +59,7 @@
 //                     "Login",
 //                     style: R.textStyles.poppinsBold(
 //                       color: R.colors.primary,
-//                       fontSize: 18.sp,
+//                       fontSize: 18,
 //                     ),
 //                   ),
 //                   h2,
@@ -128,7 +128,7 @@
 //                             "Forgot Password?",
 //                             textAlign: TextAlign.center,
 //                             style: R.textStyles.poppinsMedium(
-//                               fontSize: 12.sp,
+//                               fontSize: 12,
 //                               color: R.colors.primary,
 //                             ),
 //                           ),

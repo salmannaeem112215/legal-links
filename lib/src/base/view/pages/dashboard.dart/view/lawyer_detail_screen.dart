@@ -157,7 +157,7 @@ class _LawyerDetailsScrrenState extends State<LawyerDetailsScrren> {
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                   style: R.textStyles
-                                      .poppinsSemiBold(fontSize: 11.sp, color: R.colors.black),
+                                      .poppinsSemiBold(fontSize: 11, color: R.colors.black),
                                 ),
                                 Row(
                                   children: List.generate(
@@ -168,7 +168,7 @@ class _LawyerDetailsScrrenState extends State<LawyerDetailsScrren> {
                                       maxLines: 1,
                                       overflow: TextOverflow.ellipsis,
                                       style: R.textStyles
-                                          .poppinsRegular(fontSize: 10.sp, color: R.colors.black),
+                                          .poppinsRegular(fontSize: 10, color: R.colors.black),
                                     ),
                                   ),
                                 ),
@@ -180,7 +180,7 @@ class _LawyerDetailsScrrenState extends State<LawyerDetailsScrren> {
                                 //   maxLines: 1,
                                 //   overflow: TextOverflow.ellipsis,
                                 //   style: R.textStyles
-                                //       .poppinsRegular(fontSize: 10.sp, color: R.colors.black),
+                                //       .poppinsRegular(fontSize: 10, color: R.colors.black),
                                 // ),
                               ],
                             ),
@@ -189,7 +189,7 @@ class _LawyerDetailsScrrenState extends State<LawyerDetailsScrren> {
                           ],
                         ),
                         h0P5,
-                        Text("Experiences:", style: R.textStyles.poppinsMedium(fontSize: 11.sp)),
+                        Text("Experiences:", style: R.textStyles.poppinsMedium(fontSize: 11)),
                         h0P5,
                         Wrap(
                           children: [
@@ -205,13 +205,13 @@ class _LawyerDetailsScrrenState extends State<LawyerDetailsScrren> {
                                   maxLines: 2,
                                   overflow: TextOverflow.ellipsis,
                                   style: R.textStyles
-                                      .poppinsRegular(fontSize: 10.sp, color: R.colors.black),
+                                      .poppinsRegular(fontSize: 10, color: R.colors.black),
                                 ),
                               ),
                           ],
                         ),
                         h2,
-                        Text("Qualifications:", style: R.textStyles.poppinsMedium(fontSize: 11.sp)),
+                        Text("Qualifications:", style: R.textStyles.poppinsMedium(fontSize: 11)),
                         h0P5,
                         Wrap(
                           children: [
@@ -227,7 +227,7 @@ class _LawyerDetailsScrrenState extends State<LawyerDetailsScrren> {
                                   maxLines: 2,
                                   overflow: TextOverflow.ellipsis,
                                   style: R.textStyles
-                                      .poppinsRegular(fontSize: 10.sp, color: R.colors.black),
+                                      .poppinsRegular(fontSize: 10, color: R.colors.black),
                                 ),
                               ),
                           ],
@@ -318,7 +318,7 @@ class _LawyerDetailsScrrenState extends State<LawyerDetailsScrren> {
                               child: Text(
                                 DateFormat("dd-MMM-yyyy").format(timestampDate.toDate()),
                                 style: R.textStyles.poppinsRegular(
-                                  fontSize: 10.sp,
+                                  fontSize: 10,
                                   color: selDateIndex == index ? R.colors.white : R.colors.primary,
                                 ),
                               ),
@@ -395,14 +395,14 @@ class _LawyerDetailsScrrenState extends State<LawyerDetailsScrren> {
             headingText,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            style: R.textStyles.poppinsSemiBold(fontSize: 10.sp),
+            style: R.textStyles.poppinsSemiBold(fontSize: 10),
           ),
           h0P5,
           Text(
             text,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            style: R.textStyles.poppinsRegular(fontSize: 10.sp),
+            style: R.textStyles.poppinsRegular(fontSize: 10),
           ),
         ],
       ),

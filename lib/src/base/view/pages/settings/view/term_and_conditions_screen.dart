@@ -24,7 +24,7 @@ class TermsAndConditions extends StatelessWidget {
               context.read<SettingsVM>().contentModel.termsOfUse ?? "",
               style: R.textStyles.poppinsRegular(
                 color: R.colors.black,
-                fontSize: 10.sp,
+                fontSize: 10,
                 fontWeight: FontWeight.w400,
               ),
             ),

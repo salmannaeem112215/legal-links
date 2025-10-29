@@ -82,7 +82,7 @@ class _PaymentConfirmationDialogState extends State<PaymentConfirmationDialog> {
                   widget.model?.providerName ?? "",
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: R.textStyles.poppinsSemiBold(fontSize: 13.sp, color: R.colors.black),
+                  style: R.textStyles.poppinsSemiBold(fontSize: 13, color: R.colors.black),
                 ),
                 h2,
                 Center(child: pickImageWidget(authVm)),

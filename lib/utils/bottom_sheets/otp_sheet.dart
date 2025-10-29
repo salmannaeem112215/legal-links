@@ -73,7 +73,7 @@ class _OTPSheetState extends State<OTPSheet> {
           Text(
             "Enter OTP",
             style: R.textStyles.poppinsBold(
-              fontSize: 15.sp,
+              fontSize: 15,
             ),
           ),
           h2,
@@ -93,7 +93,7 @@ class _OTPSheetState extends State<OTPSheet> {
                           text: widget.email!
                               .replaceRange(2, widget.email!.split("@").first.length, "******"),
                           style: R.textStyles.poppinsRegular(
-                            fontSize: 12.sp,
+                            fontSize: 12,
                             color: R.colors.black,
                           ),
                         ),
@@ -108,7 +108,7 @@ class _OTPSheetState extends State<OTPSheet> {
                     text: TextSpan(
                       text: "Enter the OTP code that you have received on your phone number",
                       style: R.textStyles.poppinsRegular(
-                        fontSize: 12.sp,
+                        fontSize: 12,
                         color: R.colors.grey,
                       ),
                       children: <TextSpan>[
@@ -116,7 +116,7 @@ class _OTPSheetState extends State<OTPSheet> {
                         TextSpan(
                           text: widget.email!,
                           style: R.textStyles.poppinsRegular(
-                            fontSize: 12.sp,
+                            fontSize: 12,
                             color: R.colors.black,
                           ),
                         ),
@@ -131,7 +131,7 @@ class _OTPSheetState extends State<OTPSheet> {
                 "Change Number",
                 style: R.textStyles
                     .poppinsRegular(
-                        fontSize: 12.sp, fontWeight: FontWeight.w500, color: R.colors.black)
+                        fontSize: 12, fontWeight: FontWeight.w500, color: R.colors.black)
                     .copyWith(decoration: TextDecoration.underline),
               ),
             ),
@@ -151,7 +151,7 @@ class _OTPSheetState extends State<OTPSheet> {
         PinCodeTextField(
           textStyle: R.textStyles
               .poppinsRegular()
-              .copyWith(color: R.colors.black, fontWeight: FontWeight.w500, fontSize: 13.sp),
+              .copyWith(color: R.colors.black, fontWeight: FontWeight.w500, fontSize: 13),
           appContext: context,
           length: 6,
           obscureText: false,
@@ -191,11 +191,11 @@ class _OTPSheetState extends State<OTPSheet> {
           children: [
             Text(
               "Didn't receive code?",
-              style: R.textStyles.poppinsRegular(fontSize: 12.sp, color: R.colors.black),
+              style: R.textStyles.poppinsRegular(fontSize: 12, color: R.colors.black),
             ),
             Text(' $timerText',
                 style: R.textStyles.poppinsRegular(
-                    fontSize: 14.sp, color: R.colors.black, fontWeight: FontWeight.w600)),
+                    fontSize: 14, color: R.colors.black, fontWeight: FontWeight.w600)),
           ],
         ),
         h1,
@@ -208,7 +208,7 @@ class _OTPSheetState extends State<OTPSheet> {
           child: Text('Resend?',
               style: R.textStyles
                   .poppinsBold(
-                    fontSize: 12.sp,
+                    fontSize: 12,
                     fontWeight: FontWeight.w500,
                     color: currentSeconds == timerMaxSeconds ? R.colors.primary : R.colors.black,
                   )

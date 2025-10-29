@@ -39,7 +39,7 @@ class _CompleteProfileState extends State<CompleteProfile> {
             Text(
               'You have successfully created your profile on Legal Links',
               textAlign: TextAlign.center,
-              style: R.textStyles.poppinsSemiBold(color: R.colors.primary, fontSize: 17.sp),
+              style: R.textStyles.poppinsSemiBold(color: R.colors.primary, fontSize: 17),
             ),
             h3,
             Text(

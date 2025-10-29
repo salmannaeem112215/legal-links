@@ -55,14 +55,14 @@ class _CongratulationsSheetState extends State<CongratulationsSheet> {
           Text(
             "Congratulations",
             textAlign: TextAlign.center,
-            style: R.textStyles.poppinsBold(color: R.colors.black, fontSize: 15.sp),
+            style: R.textStyles.poppinsBold(color: R.colors.black, fontSize: 15),
           ),
           h1P5,
           Text(
             widget.subTitle,
             textAlign: TextAlign.center,
             style: R.textStyles.poppinsRegular(
-              fontSize: 12.sp,
+              fontSize: 12,
               color: R.colors.grey,
             ),
           ),

@@ -87,7 +87,7 @@ class _ScheduleAppointmentViewState extends State<ScheduleAppointmentView> {
                   Text(
                     'Select Days',
                     style: R.textStyles.poppinsSemiBold(
-                        fontSize: 12.sp, color: R.colors.black),
+                        fontSize: 12, color: R.colors.black),
                   ),
                   h1,
                   InkWell(
@@ -233,7 +233,7 @@ class _ScheduleAppointmentViewState extends State<ScheduleAppointmentView> {
                   Text(
                     'Interval of meeting',
                     style: R.textStyles.poppinsMedium(
-                      fontSize: 11.sp,
+                      fontSize: 11,
                       color: Colors.black,
                     ),
                   ),

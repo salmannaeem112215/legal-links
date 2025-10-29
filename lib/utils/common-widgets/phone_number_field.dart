@@ -39,7 +39,7 @@ class _PhoneNumberFieldState extends State<PhoneNumberField> {
             child: Text(
               widget.fieldTitle ?? "",
               style: R.textStyles.poppinsMedium(
-                fontSize: 11.sp,
+                fontSize: 11,
                 color: Colors.black,
               ),
             ),
@@ -61,7 +61,7 @@ class _PhoneNumberFieldState extends State<PhoneNumberField> {
             filled: true,
             fillColor: R.colors.primary.withOpacity(.1),
             hintStyle: R.textStyles.poppinsRegular(
-              fontSize: 12.sp,
+              fontSize: 12,
               color: R.colors.black,
               fontWeight:
                   widget.numberFN!.hasFocus ? FontWeight.w500 : FontWeight.w300,

@@ -44,7 +44,7 @@ class ChamberWidget extends StatelessWidget {
             model.name ?? '',
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
-            style: R.textStyles.poppinsMedium(fontSize: 11.sp),
+            style: R.textStyles.poppinsMedium(fontSize: 11),
           )
         ],
       ),

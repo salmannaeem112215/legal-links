@@ -104,7 +104,7 @@ class _SignupScreenOneOfLawyerState extends State<SignupScreenOneOfLawyer> {
                     child: Text(
                       "Phone Number",
                       style: R.textStyles.poppinsMedium(
-                        fontSize: 11.sp,
+                        fontSize: 11,
                         color: Colors.black,
                       ),
                     ),
@@ -129,7 +129,7 @@ class _SignupScreenOneOfLawyerState extends State<SignupScreenOneOfLawyer> {
                   Text(
                     'Gender',
                     style: R.textStyles.poppinsMedium(
-                      fontSize: 11.sp,
+                      fontSize: 11,
                       color: Colors.black,
                     ),
                   ),
@@ -165,7 +165,7 @@ class _SignupScreenOneOfLawyerState extends State<SignupScreenOneOfLawyer> {
           child: Text(
             getGenderString(m),
             style: R.textStyles.poppinsRegular(
-              fontSize: 8.sp,
+              fontSize: 8,
               color: Colors.black,
             ),
           ),
@@ -248,7 +248,7 @@ class _SignupScreenOneOfLawyerState extends State<SignupScreenOneOfLawyer> {
                 textAlign: TextAlign.center,
                 style: R.textStyles.poppinsMedium(
                   fontWeight: FontWeight.w600,
-                  fontSize: 14.sp,
+                  fontSize: 14,
                   color: R.colors.black,
                   letterSpacing: 0.32,
                 ),
@@ -256,7 +256,7 @@ class _SignupScreenOneOfLawyerState extends State<SignupScreenOneOfLawyer> {
               Text(
                 'Click to upload image',
                 style: R.textStyles.poppinsRegular(
-                  fontSize: 10.sp,
+                  fontSize: 10,
                   color: R.colors.grey,
                   letterSpacing: -0.012,
                 ),
@@ -284,7 +284,7 @@ class _SignupScreenOneOfLawyerState extends State<SignupScreenOneOfLawyer> {
         ),
         filled: true,
         focusColor: R.colors.primary,
-        hintStyle: R.textStyles.poppinsRegular(fontSize: 11.sp, color: Colors.grey),
+        hintStyle: R.textStyles.poppinsRegular(fontSize: 11, color: Colors.grey),
         errorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
             borderSide: BorderSide(

@@ -37,7 +37,7 @@ class CustomButton extends StatelessWidget {
             buttonTitle,
             style: R.textStyles
                 .poppinsMedium()
-                .copyWith(color: textColor ?? R.colors.white, fontSize: 12.sp),
+                .copyWith(color: textColor ?? R.colors.white, fontSize: 12),
           ),
         ],
       ),

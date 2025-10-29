@@ -121,7 +121,7 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
         h2,
         Text(
           vm.userModel.fullName ?? '',
-          style: R.textStyles.poppinsBold(fontSize: 15.sp),
+          style: R.textStyles.poppinsBold(fontSize: 15),
         ),
         Text(vm.userModel.email ?? '', style: R.textStyles.poppinsRegular()),
         h4,
@@ -133,7 +133,7 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
               children: [
                 Text(
                   'All Information',
-                  style: R.textStyles.poppinsBold(fontSize: 13.sp),
+                  style: R.textStyles.poppinsBold(fontSize: 13),
                 ),
                 h1,
                 Text(
@@ -196,7 +196,7 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
                       child: Text(
                         'Practice Area',
                         style: R.textStyles.poppinsMedium(
-                          fontSize: 12.sp,
+                          fontSize: 12,
                           color: R.colors.black,
                           letterSpacing: 0.45,
                         ),
@@ -260,7 +260,7 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
         h3,
         Text(
           authVM.userModel.fullName ?? '',
-          style: R.textStyles.poppinsBold(fontSize: 15.sp),
+          style: R.textStyles.poppinsBold(fontSize: 15),
         ),
         Text(authVM.userModel.email ?? '', style: R.textStyles.poppinsRegular()),
         h4,
@@ -272,7 +272,7 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
               children: [
                 Text(
                   'All Information :',
-                  style: R.textStyles.poppinsBold(fontSize: 13.sp),
+                  style: R.textStyles.poppinsBold(fontSize: 13),
                 ),
                 h1,
                 // if (authVM.userModel.about != "" || authVM.userModel.about != null)

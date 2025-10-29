@@ -45,7 +45,7 @@ class _CustomDatePickerDialogState extends State<CustomDatePickerDialog> {
                       'Select Date',
                       style: R.textStyles.poppinsRegular(
                         fontWeight: FontWeight.w500,
-                        fontSize: 14.sp,
+                        fontSize: 14,
                         color: R.colors.primary,
                       ),
                     ),
@@ -70,7 +70,7 @@ class _CustomDatePickerDialogState extends State<CustomDatePickerDialog> {
                   data: CupertinoThemeData(
                       textTheme: CupertinoTextThemeData(
                           dateTimePickerTextStyle: R.textStyles.poppinsRegular(
-                    fontSize: 13.sp,
+                    fontSize: 13,
                     fontWeight: FontWeight.w500,
                     color: R.colors.primary,
                   ))),

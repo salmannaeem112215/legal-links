@@ -49,7 +49,7 @@ class _PDFScreenState extends State<PDFViewWidget> with WidgetsBindingObserver {
                 ),
                 title: Text(
                   "view",
-                  style: R.textStyles.poppinsRegular(color: R.colors.primary, fontSize: 14.sp),
+                  style: R.textStyles.poppinsRegular(color: R.colors.primary, fontSize: 14),
                 )),
             body: Padding(
               padding: const EdgeInsets.all(10),
@@ -155,7 +155,7 @@ class _PDFScreenState extends State<PDFViewWidget> with WidgetsBindingObserver {
           ),
           Text(
             title,
-            style: R.textStyles.poppinsRegular(color: R.colors.red, fontSize: 10.sp),
+            style: R.textStyles.poppinsRegular(color: R.colors.red, fontSize: 10),
           )
         ],
       ),

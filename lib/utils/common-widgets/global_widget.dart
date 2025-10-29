@@ -22,12 +22,12 @@ class GlobalWidgets {
           Text(
             firstTxt,
             style: R.textStyles
-                .poppinsMedium(fontSize: 10.sp, color: Colors.black),
+                .poppinsMedium(fontSize: 10, color: Colors.black),
           ),
           Text(
             scndTxt,
             style: R.textStyles.poppinsMedium(
-                fontSize: 12.sp,
+                fontSize: 12,
                 color: R.colors.primary,
                 fontWeight: FontWeight.bold),
           ),
@@ -43,7 +43,7 @@ class GlobalWidgets {
       elevation: 2,
       title: Text(
         text,
-        style: R.textStyles.poppinsSemiBold(fontSize: 13.sp),
+        style: R.textStyles.poppinsSemiBold(fontSize: 13),
       ),
       leading: (showbackButton ?? false)
           ? IconButton(
@@ -102,7 +102,7 @@ class GlobalWidgets {
                 Text(
                   "Help",
                   style: R.textStyles.poppinsRegular(
-                    fontSize: 9.sp,
+                    fontSize: 9,
                     color: R.colors.white,
                   ),
                 ),

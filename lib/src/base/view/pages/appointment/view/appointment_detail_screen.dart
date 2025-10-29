@@ -81,7 +81,7 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
                       Text(
                         "Help",
                         style: R.textStyles.poppinsMedium(
-                          fontSize: 9.sp,
+                          fontSize: 9,
                           color: R.colors.white,
                         ),
                       ),
@@ -123,7 +123,7 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
                           Text(
                             "${model?.id.toString()}",
                             style: R.textStyles.poppinsSemiBold(
-                                color: R.colors.primary, fontSize: 15.sp),
+                                color: R.colors.primary, fontSize: 15),
                           ),
                           h1,
                           if (model?.selectedDate != null)
@@ -132,7 +132,7 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
                                 Icon(
                                   Icons.calendar_today,
                                   color: R.colors.primary,
-                                  size: 11.sp,
+                                  size: 11,
                                 ),
                                 Text(
                                   DateFormat(" MMMM dd, yyyy").format(
@@ -141,12 +141,12 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                   style: R.textStyles.poppinsMedium(
-                                      fontSize: 12.sp, color: R.colors.primary),
+                                      fontSize: 12, color: R.colors.primary),
                                 ),
                                 Text(
                                   "  |  ",
                                   style: R.textStyles.poppinsMedium(
-                                      fontSize: 12.sp, color: R.colors.grey),
+                                      fontSize: 12, color: R.colors.grey),
                                 ),
                                 Text(
                                   DateFormat("hh:mm a").format(
@@ -155,7 +155,7 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                   style: R.textStyles.poppinsMedium(
-                                      fontSize: 12.sp, color: R.colors.primary),
+                                      fontSize: 12, color: R.colors.primary),
                                 )
                               ],
                             ),
@@ -198,7 +198,7 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
                         child: Text(
                           'Total:',
                           style: R.textStyles.poppinsMedium(
-                            fontSize: 12.sp,
+                            fontSize: 12,
                             color: R.colors.primary,
                             letterSpacing: 0.45,
                           ),

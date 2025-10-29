@@ -60,7 +60,7 @@ class _ForgotPasswordSheetState extends State<ForgotPasswordSheet> {
               h2,
               Text(
                 widget.title,
-                style: R.textStyles.poppinsBold(color: R.colors.black, fontSize: 15.sp),
+                style: R.textStyles.poppinsBold(color: R.colors.black, fontSize: 15),
               ),
               h2,
               Text(

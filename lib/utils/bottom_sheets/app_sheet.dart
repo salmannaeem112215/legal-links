@@ -61,7 +61,7 @@ class _AppBottomSheetState extends State<AppBottomSheet> {
               textAlign: TextAlign.center,
               style: R.textStyles.poppinsBold(
                 fontWeight: FontWeight.w600,
-                fontSize: 17.sp,
+                fontSize: 17,
               ),
             ),
             SizedBox(height: 2.h),
@@ -71,7 +71,7 @@ class _AppBottomSheetState extends State<AppBottomSheet> {
                 widget.subtitle ?? '',
                 textAlign: TextAlign.center,
                 style: R.textStyles.poppinsRegular(
-                  fontSize: 13.sp,
+                  fontSize: 13,
                   color: R.colors.darkGrey,
                   letterSpacing: 0.45,
                 ),

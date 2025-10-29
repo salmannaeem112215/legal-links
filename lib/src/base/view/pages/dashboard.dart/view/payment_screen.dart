@@ -109,7 +109,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style:
-                              R.textStyles.poppinsSemiBold(fontSize: 11.sp, color: R.colors.black),
+                              R.textStyles.poppinsSemiBold(fontSize: 11, color: R.colors.black),
                         ),
                         rowTextWidget(title: "Name:", txt: model.userName ?? ""),
                         rowTextWidget(title: "Account Number:", txt: model.accountNumber ?? ""),
@@ -134,14 +134,14 @@ class _PaymentScreenState extends State<PaymentScreen> {
           title,
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
-          style: R.textStyles.poppinsSemiBold(fontSize: 10.sp, color: R.colors.primary),
+          style: R.textStyles.poppinsSemiBold(fontSize: 10, color: R.colors.primary),
         ),
         w1,
         Text(
           txt,
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
-          style: R.textStyles.poppinsRegular(fontSize: 10.sp, color: R.colors.primary),
+          style: R.textStyles.poppinsRegular(fontSize: 10, color: R.colors.primary),
         ),
       ],
     );

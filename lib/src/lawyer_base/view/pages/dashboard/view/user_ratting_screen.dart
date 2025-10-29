@@ -35,7 +35,7 @@ class _UserRattingViewState extends State<UserRattingView> {
         title: Text(
           'User Reviews',
           style: R.textStyles
-              .poppinsSemiBold(color: R.colors.primary, fontSize: 15.sp),
+              .poppinsSemiBold(color: R.colors.primary, fontSize: 15),
         ),
       ),
       body: SingleChildScrollView(

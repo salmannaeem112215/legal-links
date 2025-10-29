@@ -22,7 +22,7 @@ class CustomData extends StatelessWidget {
           child: Text(
             title,
             style: R.textStyles.poppinsMedium(
-              fontSize: 12.sp,
+              fontSize: 12,
               color: R.colors.black,
               letterSpacing: 0.45,
             ),

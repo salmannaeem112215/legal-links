@@ -139,7 +139,7 @@ class _UpdateLawyerProfileState extends State<UpdateLawyerProfile> {
                     child: Text(
                       "Phone Number",
                       style: R.textStyles.poppinsMedium(
-                        fontSize: 11.sp,
+                        fontSize: 11,
                         color: Colors.black,
                       ),
                     ),
@@ -315,7 +315,7 @@ class _UpdateLawyerProfileState extends State<UpdateLawyerProfile> {
                 child: Text(
                   item.specialist ?? "",
                   style: R.textStyles
-                      .poppinsRegular(color: R.colors.black, fontSize: 8.sp),
+                      .poppinsRegular(color: R.colors.black, fontSize: 8),
                 ),
               ))
           .toList(),
@@ -350,7 +350,7 @@ class _UpdateLawyerProfileState extends State<UpdateLawyerProfile> {
         filled: true,
         focusColor: R.colors.primary,
         hintStyle:
-            R.textStyles.poppinsRegular(fontSize: 11.sp, color: Colors.grey),
+            R.textStyles.poppinsRegular(fontSize: 11, color: Colors.grey),
         errorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
             borderSide: BorderSide(
@@ -503,7 +503,7 @@ class _UpdateLawyerProfileState extends State<UpdateLawyerProfile> {
               child: Text(
                 'ADD MORE',
                 style: R.textStyles
-                    .poppinsSemiBold(color: R.colors.primary, fontSize: 10.sp),
+                    .poppinsSemiBold(color: R.colors.primary, fontSize: 10),
               )),
         ],
       );

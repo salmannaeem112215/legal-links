@@ -50,7 +50,7 @@ class ScreenTileWidget extends StatelessWidget {
             children: [
               Icon(iconVar, size: 14.sp, color: color),
               w2,
-              Text(title, style: R.textStyles.poppinsMedium(fontSize: 10.sp, color: textColor)),
+              Text(title, style: R.textStyles.poppinsMedium(fontSize: 10, color: textColor)),
               const Spacer(),
               Icon(Icons.arrow_forward_ios_rounded,
                   size: 14.sp, color: textColor ?? R.colors.primary)

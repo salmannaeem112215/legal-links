@@ -251,7 +251,7 @@ class _HomeViewState extends State<HomeView> {
         Text(
           title,
           style: R.textStyles
-              .poppinsSemiBold(color: R.colors.black, fontSize: 14.sp),
+              .poppinsSemiBold(color: R.colors.black, fontSize: 14),
         ),
         if (isViewAll ?? false)
           TextButton(
@@ -262,7 +262,7 @@ class _HomeViewState extends State<HomeView> {
               'View All',
               style: R.textStyles
                   .poppinsRegular(
-                    fontSize: 10.sp,
+                    fontSize: 10,
                     color: R.colors.primary,
                   )
                   .copyWith(
